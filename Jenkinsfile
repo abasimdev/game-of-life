@@ -12,6 +12,7 @@ node('Master')
     {
         archiveArtifacts 'gameoflife-web/target/*.war'
         junit 'gameoflife-web/target/surefire-reports/*.xml'
+	build job 'Project GOL-Parameterized (FS)'
     }
     
 }
