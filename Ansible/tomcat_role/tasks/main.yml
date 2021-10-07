@@ -1,0 +1,42 @@
+---
+# tasks file for tomcat_role
+
+# - pre_tasks:
+#     name: Update ubuntu packages
+#     apt:
+#       update_cache: yes
+#     when: ansible_facts[os_family]='debian' 
+
+- name: Install packages
+  package:
+    name: "{{ packages }}"
+    state: present
+  notify: restart_tomcat
+
+# - name: Remove tree package
+#   package:
+#     name: "{{ packages }}"
+#     state: absent
+#   when: "{{ packages }}" == 'tree'
+    # when: ansible_facts['os_family'] == "Debian"
+  
+# - name: Install Tomcat_9
+#   apt:
+#     name: tomcat9
+#     update_cache: yes
+#     state: present
+#   notify: tomcat_restart
+
+
+#   handlers:
+#     - name: tomcat_restart
+#       service:
+#         name: tomcat9
+#         state: restarted
+#         enabled: yes
+
+# - name: Restart Tomcat Service
+#   service: 
+#     name: tomcat9
+#     state: restarted
+#     enabled: yes

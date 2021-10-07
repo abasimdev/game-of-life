@@ -1,0 +1,10 @@
+---
+# vars file for tomcat_role
+
+packages:
+ - openjdk-8-jre-headless
+ - tomcat7
+ - tomcat7-docs
+ - tomcat7-admin
+ - tomcat7-examples
+#  - tree

@@ -1,0 +1,8 @@
+---
+# handlers file for tomcat_role
+
+- name: restart_tomcat
+  service:
+    name: "{{ packages[1] }}"
+    state: restarted
+    enabled: yes
